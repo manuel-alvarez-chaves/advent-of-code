@@ -33,7 +33,7 @@ if __name__ == "__main__":
         row = np.array([int(i) for i in row.split()], dtype=int)
         if analyze_report(row):
             count += 1
-    print(f"Part 1: {count}")
+    print(f"Part 1: {count}") # 390
 
     # Part 2
     count = 0
@@ -47,4 +47,4 @@ if __name__ == "__main__":
             if analyze_report(new_row):
                 count += 1
                 break
-    print(f"Part 2: {count}")
+    print(f"Part 2: {count}") # 439

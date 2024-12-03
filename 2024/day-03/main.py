@@ -13,7 +13,7 @@ if __name__ == "__main__":
     result = 0
     for match in matches:
         result += int(match[0]) * int(match[1])
-    print(f"Part 1: {result}")
+    print(f"Part 1: {result}") # 182619815
 
 
     # Part 2
@@ -27,4 +27,4 @@ if __name__ == "__main__":
             multiply = False
         elif multiply:
             result += int(match.group(1)) * int(match.group(2))
-    print(f"Part 2: {result}")
+    print(f"Part 2: {result}") # 80747545
