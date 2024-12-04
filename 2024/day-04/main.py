@@ -95,9 +95,9 @@ if __name__ == "__main__":
         up, down, left, right = available_movements(arr, pos, 1)
         if up and down and left and right:
             # Plus
-            plus = arr[x - 1, y] + arr[x, y] + arr[x + 1, y] + arr[x, y - 1] + arr[x, y] + arr[x, y + 1]
-            if plus in patterns:
-                count += 1
+            # plus = arr[x - 1, y] + arr[x, y] + arr[x + 1, y] + arr[x, y - 1] + arr[x, y] + arr[x, y + 1]
+            # if plus in patterns:
+            #     count += 1
 
             # Cross
             cross = arr[x - 1, y - 1] + arr[x, y] + arr[x + 1, y + 1] + arr[x + 1, y - 1] + arr[x, y] + arr[x - 1, y + 1]
