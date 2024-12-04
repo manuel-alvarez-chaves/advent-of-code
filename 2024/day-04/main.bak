@@ -1,0 +1,83 @@
+import numpy as np
+
+example = r"""MMMSXXMASM
+MSAMXMSMSA
+AMXSXMAAMM
+MSAMASMSMX
+XMASAMXAMM
+XXAMMXXAMA
+SMSMSASXSS
+SAXAMASAAA
+MAMMMXMMMM
+MXMXAXMASX"""
+
+def string_to_array(text: str) -> np.array:
+    arr, inner = [], []
+    for char in text:
+        if char == "\n":
+            arr.append(inner)
+            inner = []
+        else:
+            inner.append(char)
+    arr.append(inner)
+    return np.array(arr)
+
+def find_diagonals(arr: np.array):
+    num_rows, num_cols = arr.shape
+    idxs = [num - num_rows + 1 for num in range(num_rows + num_cols - 1)]
+    new_arr = []
+    for i in idxs:
+        diag = np.diag(arr, i)
+        if len(diag) >= 4:
+            txt = ""
+            for i in diag:
+                txt += str(i)
+            new_arr.append(txt)  
+    return new_arr
+
+def find_rows(arr: np.array):
+    num_rows, _ = arr.shape
+    new_arr = []
+    for i in range(num_rows):
+        row = arr[i, :]
+        if len(row) >= 4:
+            txt = ""
+            for i in row:
+                txt += str(i)
+            new_arr.append(txt)
+    return new_arr
+
+if __name__ == "__main__":
+    # Read data
+    with open("day-04/input.txt", "r") as f:
+        data = f.read()
+    arr = string_to_array(data)
+
+    # Begin count:
+    count = 0
+
+    # Horizontal
+    rows = find_rows(arr)
+    for row in rows:
+        count += row.count("XMAS")
+        count += row.count("SAMX") 
+    
+    # Vertical
+    rows = find_rows(arr.T)
+    for row in rows:
+        count += row.count("XMAS")
+        count += row.count("SAMX")
+
+    # Diagonal 1
+    diagonals = find_diagonals(arr)
+    for diag in diagonals:
+        count += diag.count("XMAS")
+        count += diag.count("SAMX")
+
+    # Diagonal 2
+    diagonals = find_diagonals(np.flip(arr, axis=0))
+    for diag in diagonals:
+        count += diag.count("XMAS")
+        count += diag.count("SAMX")
+    
+    print(f"Part 1: {count}") # 2599
