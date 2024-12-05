@@ -3,10 +3,10 @@ import re
 example_memory_1 = "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))"
 example_memory_2 = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"
 
-with open("day-03/input.txt", "r") as f:
-    memory = f.read()
-
 if __name__ == "__main__":
+    with open("day-03/input.txt", "r") as f:
+        memory = f.read()
+
     # Part 1
     pattern = re.compile(r"mul\((\d+),(\d+)\)")
     matches = pattern.findall(memory)
