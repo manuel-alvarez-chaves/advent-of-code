@@ -7,8 +7,8 @@ def file_to_list(path: str) -> list[str]:
         return data
 
 # Read data
-path_1 = Path("day-05/example1.txt")
-path_2 = Path("day-05/example2.txt")
+# path_1 = Path("day-05/example1.txt")
+# path_2 = Path("day-05/example2.txt")
 path_1 = Path("day-05/data1.txt")
 path_2 = Path("day-05/data2.txt")
 rules = file_to_list(path_1)
@@ -43,7 +43,7 @@ for update in updates:
     else:
         incorrect_updates.append(update)
 
-print(f"Part 1: {sum(correct_middles)}")
+print(f"Part 1: {sum(correct_middles)}") # 5391
 
 # Part 2
 correct_middles = []
@@ -60,5 +60,5 @@ for update in incorrect_updates:
                         new_pos = pos
         new_update.insert(new_pos, i)
     correct_middles.append(new_update[int((len(new_update) - 1) / 2)])
-print(f"Part 2: {sum(correct_middles)}")
+print(f"Part 2: {sum(correct_middles)}") # 6142
 
