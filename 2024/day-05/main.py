@@ -9,8 +9,8 @@ def file_to_list(path: str) -> list[str]:
 # Read data
 # path_1 = Path("day-05/example1.txt")
 # path_2 = Path("day-05/example2.txt")
-path_1 = Path("day-05/data1.txt")
-path_2 = Path("day-05/data2.txt")
+path_1 = Path("day-05/input1.txt")
+path_2 = Path("day-05/input2.txt")
 rules = file_to_list(path_1)
 rules = [rule.split("|") for rule in rules]
 order = {}
