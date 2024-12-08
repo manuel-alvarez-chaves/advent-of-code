@@ -51,9 +51,9 @@ if __name__ == "__main__":
     # Part 1
     filled_grid = find_antinodes(inp)
     num_antinodes = len(np.argwhere(filled_grid == "#"))
-    print(f"Part 1: {num_antinodes}")
+    print(f"Part 1: {num_antinodes}") # 327
 
     # Part 2
     filled_grid = find_antinodes(inp, True)
     num_antinodes = len(np.argwhere(filled_grid == "#"))
-    print(f"Part 2: {num_antinodes}")
+    print(f"Part 2: {num_antinodes}") # 1233
