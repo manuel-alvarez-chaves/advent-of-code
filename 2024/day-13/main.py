@@ -32,7 +32,7 @@ def cost(chunk, error=False):
     
     presses = np.linalg.solve(buttons, prize).round().astype(int)
     if (presses @ buttons.T == prize).all():
-        return presses @ (3, 1)
+        return presses @ (cost_A, cost_B)
     else:
         return 0
         
