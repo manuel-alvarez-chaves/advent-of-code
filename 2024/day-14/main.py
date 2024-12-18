@@ -103,7 +103,8 @@ if __name__ == "__main__":
 
     # Part 2
     # Simulate for a while and find the time at which the robots have
-    # the smallest safety factor
+    # the smallest safety factor. This means that the robots are clustered
+    # together in one of the quadrants forming the christmas tree.
     robots = [Robot(*entry) for entry in data]
     scores = []
     for idx in range(10000):
